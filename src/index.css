@@ -1,4 +1,31 @@
 :root {
+	--color-primary: #532ee3;
+
+	--color-primary-light-1: #7258eb;
+	--color-primary-light-2: #9c86f2;
+	--color-primary-light-3: #c6baf9;
+	--color-primary-light-4: #dad3f7;
+	--color-primary-light-5: #ede9fe;
+
+	--color-primary-dark-1: #4428b6;
+	--color-primary-dark-2: #371f8d;
+	--color-primary-dark-3: #291764;
+
+	--color-neutral-100: #f8f9fa;
+	--color-neutral-200: #e9ecef;
+	--color-neutral-300: #dee2e6;
+	--color-neutral-400: #ced4da;
+	--color-neutral-500: #adb5bd;
+	--color-neutral-600: #6c757d;
+	--color-neutral-700: #495057;
+	--color-neutral-800: #343a40;
+	--color-neutral-900: #212529;
+
+	--color-complementary-1: #e352a5;
+	--color-complementary-2: #52e3aa;
+	--color-complementary-dark: #42b084;
+	--color-complementary-light: #a869c8;
+
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;

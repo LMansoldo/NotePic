@@ -2,8 +2,8 @@ interface AnnotationsState {
 	mode?: string;
 	brushSize?: number;
 	classes: Class[];
-	selectedClass?: string | null;
-	shapes: string[];
+	selectedClass?: Shape | null;
+	shapes: Shape[];
 }
 
 type ShapeType = 'brush' | 'polygon';
