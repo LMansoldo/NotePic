@@ -1,11 +1,14 @@
 import { MainLayout } from '@layout/MainLayout'
 import { AnnotationsProvider } from '@context/Annotations'
+import { Button } from "@components"
 
 function App() {
   return (
     <AnnotationsProvider>
       <MainLayout>
-        <div>{/* Here goes my content */}</div>
+        <Button>
+          Test
+        </Button>
       </MainLayout>
     </AnnotationsProvider>
   )
