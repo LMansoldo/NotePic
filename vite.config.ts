@@ -16,12 +16,15 @@ export default defineConfig({
   },
   resolve: {
 		alias: {
+      '@layout': path.resolve(__dirname, './src/layout'),
+      '@layout/*': path.resolve(__dirname, './src/layout/*'),
 			'@components': path.resolve(__dirname, './src/components'),
 			'@views': path.resolve(__dirname, './src/views'),
 			'@types': path.resolve(__dirname, './src/types'),
 			'@repositories': path.resolve(__dirname, './src/repositories'),
 			'@assets': path.resolve(__dirname, './src/assets'),
-			'@context': path.resolve(__dirname, './src/context'),
+      '@context': path.resolve(__dirname, './src/context'),
+			'@context/*': path.resolve(__dirname, './src/context/*'),
 			'@store': path.resolve(__dirname, './src/store'),
 		},
   },
