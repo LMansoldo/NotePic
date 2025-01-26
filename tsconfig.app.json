@@ -8,15 +8,15 @@
 		"skipLibCheck": true,
 		"paths": {
 			"@components": ["./src/components"],
+			"@components/*": ["./src/components/*"],
 			"@layout/*": ["./src/layout/*"],
 			"@layout": ["./src/layout"],
 			"@context": ["./src/context"],
 			"@context/*": ["./src/context/*"],
 			"@assets": ["./src/assets"],
-			"@repositories": ["./src/repositories"],
-			"@store": ["./src/store"],
-			"@types": ["./src/types"],
-			"@views": ["./src/views"]
+			"@hooks/*": ["./src/hooks/*"],
+			"@hooks": ["./src/hooks"],
+			"@types": ["./src/types"]
 		},
 
 		/* Bundler mode */

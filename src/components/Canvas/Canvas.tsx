@@ -1,15 +1,21 @@
 import React from 'react';
-import { Stage, StageProps } from 'react-konva';
+import Konva from 'konva';
+import { Stage } from 'react-konva';
 
 interface CanvasProps {
   children: React.ReactNode
-  props: StageProps
+  onClick?: (e: Konva.KonvaEventObject<MouseEvent>) => void;
+  onDblClick?: (e: Konva.KonvaEventObject<MouseEvent>) => void;
+  onMouseDown?: (e: Konva.KonvaEventObject<MouseEvent>) => void;
+  onMouseMove?: (e: Konva.KonvaEventObject<MouseEvent>) => void;
+  onMouseUp?: () => void;
 }
 
 const Canvas: React.FC<CanvasProps> = ({
 		children,
 	...props
 	}) => {
+
   return (
     <Stage
       width={window.innerWidth}

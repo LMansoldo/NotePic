@@ -10,7 +10,7 @@ const ToolSelector = () => {
 			<Button onClick={() => dispatch({ type: 'SET_MODE', payload: 'brush' })} size="small" shape="circle">
 				<LiaPaintBrushSolid />
 			</Button>
-			<Button onClick={() => dispatch({ type: 'SET_MODE', payload: 'polygon' })} size="small" shape="circle">
+			<Button onClick={() => dispatch({ type: 'SET_MODE', payload: 'anchorPen' })} size="small" shape="circle">
 				<LiaPenSolid />
 			</Button>
 			<Button onClick={() => dispatch({ type: 'SET_MODE', payload: 'eraser' })} size="small" shape="circle">

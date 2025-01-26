@@ -6,7 +6,7 @@ interface AnnotationsState {
 	shapes: Shape[];
 }
 
-type ShapeType = 'brush' | 'polygon' | 'eraser';
+type ShapeType = 'brush' | 'anchorPen' | 'eraser';
 
 interface Shape {
   type: ShapeType;
@@ -20,5 +20,11 @@ interface Class {
   color: string;
 }
 
+interface Point {
+  x: number;
+  y: number;
+}
 
-export type { AnnotationsState, ShapeType, Shape, Class }
+
+
+export type { AnnotationsState, ShapeType, Shape, Class, Point }
