@@ -1,4 +1,4 @@
-import{ createContext, useContext } from 'react';
+import { createContext, useContext } from 'react'
 
 import type { AnnotationAction } from '@context/Annotations'
 import type { AnnotationsState } from '@types'
@@ -10,6 +10,6 @@ const AnnotationsContext = createContext<{
 	dispatch: React.Dispatch<AnnotationAction>
 }>({ state: initialState, dispatch: () => null })
 
-const useAnnotations = () => useContext(AnnotationsContext);
+const useAnnotations = () => useContext(AnnotationsContext)
 
 export { useAnnotations, AnnotationsContext }
