@@ -1,14 +1,14 @@
 import { MainLayout } from '@layout/MainLayout'
 import { LiaPaintBrushSolid } from "react-icons/lia";
 import { AnnotationsProvider } from '@context/Annotations'
-import { Button, Canvas, Card } from "@components"
+import { Button, Annotation, Card } from "@components"
 
 function App() {
   return (
     <AnnotationsProvider>
       <MainLayout>
       <Card>
-        <Canvas />
+        <Annotation />
       <Button shape="circle" size='small'>
           <LiaPaintBrushSolid />
         </Button>

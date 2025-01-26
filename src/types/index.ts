@@ -6,7 +6,7 @@ interface AnnotationsState {
 	shapes: Shape[];
 }
 
-type ShapeType = 'brush' | 'polygon';
+type ShapeType = 'brush' | 'polygon' | 'eraser';
 
 interface Shape {
   type: ShapeType;
