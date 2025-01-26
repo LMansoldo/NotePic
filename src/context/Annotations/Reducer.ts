@@ -10,6 +10,8 @@ const AnnotationsReducer = (
 			return { ...state, mode: action.payload }
 		case 'SET_BRUSH_SIZE':
 			return { ...state, brushSize: action.payload }
+		case 'SET_SHAPES':
+				return { ...state, shapes: action.payload };
 		case 'ADD_CLASS':
 			return {
 				...state,

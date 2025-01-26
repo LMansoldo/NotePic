@@ -16,33 +16,46 @@ const AnchorPen = () => {
 	const { state, dispatch } = useAnnotations()
 	const [currentPoints, setCurrentPoints] = useState<Point[]>([])
 
-	const handleStageClick = (e: KonvaEventObject<MouseEvent>) => {
-		if (state.mode !== 'anchorPen') return
+  const handleStageClick = (e: KonvaEventObject<MouseEvent>) => {
+    if (state.mode !== 'anchorPen') return;
+  
+    const stage = e.target.getStage();
+    const pointerPosition = stage?.getPointerPosition();
+  
+    if (!pointerPosition) return;
+  
+    const newPoints = [
+      ...currentPoints,
+      { x: pointerPosition.x, y: pointerPosition.y },
+    ];
+  
+    if (newPoints.length > 1) {
+      const startPoint = newPoints[0];
+      const endPoint = newPoints[newPoints.length - 1];
+  
+      const distance = Math.sqrt(
+        Math.pow(endPoint.x - startPoint.x, 2) + Math.pow(endPoint.y - startPoint.y, 2)
+      );
+  
+      const closeThreshold = 10;
+  
+      if (distance <= closeThreshold) {
+        const newShape = {
+          type: 'anchorPen' as const,
+          points: newPoints.flatMap((point) => [point.x, point.y]),
+          color: state.selectedClass?.color || '#000000',
+          strokeWidth: state.brushSize || 2,
+        } as Shape;
+  
+        dispatch({ type: 'ADD_SHAPE', payload: newShape });
+        setCurrentPoints([]);
+        return;
+      }
+    }
+  
+    setCurrentPoints(newPoints);
+  };
 
-		const stage = e.target.getStage()
-		const pointerPosition = stage?.getPointerPosition()
-
-		if (pointerPosition) {
-			setCurrentPoints((prev) => [
-				...prev,
-				{ x: pointerPosition.x, y: pointerPosition.y },
-			])
-		}
-	}
-
-	const handleFinishLine = () => {
-		if (currentPoints.length < 2) return
-
-		const newShape = {
-			type: 'anchorPen' as const,
-			points: currentPoints.flatMap((point) => [point.x, point.y]),
-			color: state.selectedClass?.color || '#000000',
-			strokeWidth: state.brushSize || 2,
-		} as Shape
-
-		dispatch({ type: 'ADD_SHAPE', payload: newShape })
-		setCurrentPoints([])
-	}
 
 	const handleAnchorDrag = (index: number, x: number, y: number) => {
 		const newPoints = [...currentPoints]
@@ -51,7 +64,7 @@ const AnchorPen = () => {
 	}
 
 	return (
-		<Canvas onClick={handleStageClick} onDblClick={handleFinishLine}>
+		<Canvas onClick={handleStageClick}>
 			<LayerManager>
 				<LineDraw
 					points={currentPoints.flatMap((point) => [point.x, point.y])}

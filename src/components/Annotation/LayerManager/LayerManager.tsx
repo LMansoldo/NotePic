@@ -4,7 +4,7 @@ import { Layer, Line } from 'react-konva'
 import { useAnnotations } from '@context'
 
 interface LayerManagerProps {
-	children: React.ReactNode
+	children?: React.ReactNode
 	layerRef?: React.RefObject<Konva.Layer>
 }
 
@@ -19,7 +19,7 @@ const LayerManager: React.FC<LayerManagerProps> = ({ children, layerRef }) => {
 					points={shape.points}
 					stroke={shape.color}
 					strokeWidth={shape.strokeWidth}
-					tension={0.5}
+					tension={0}
 					lineCap="round"
 					lineJoin="round"
 					closed={shape.type === 'anchorPen'}

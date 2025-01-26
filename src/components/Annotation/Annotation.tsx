@@ -1,6 +1,6 @@
 import { useAnnotations } from '@context'
 import { ToolSelector } from './ToolSelector'
-import { AnchorPen, Brush } from '@components/Annotation/Tool'
+import { AnchorPen, Brush, Eraser } from '@components/Annotation/Tool'
 
 const Annotation = () => {
 	const { state } = useAnnotations()
@@ -10,6 +10,7 @@ const Annotation = () => {
 			<ToolSelector />
 			{state && state.mode === 'anchorPen' && <AnchorPen />}
 			{state && state.mode === 'brush' && <Brush />}
+			{state && state.mode === 'eraser' && <Eraser />}
 		</>
 	)
 }

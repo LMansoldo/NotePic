@@ -13,7 +13,7 @@ const LineDraw: React.FC<LineDrawProps> = ({ points, color, strokeWidth }) => {
 			points={points}
 			stroke={color}
 			strokeWidth={strokeWidth}
-			tension={0.5}
+			tension={0}
 			lineCap="round"
 			lineJoin="round"
 		/>
