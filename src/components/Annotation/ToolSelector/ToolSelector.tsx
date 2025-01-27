@@ -1,6 +1,5 @@
-import { Button } from '@components'
+import { Button, Menu } from '@components'
 import {
-	LiaPaintBrushSolid,
 	LiaEraserSolid,
 	LiaPenFancySolid,
 	LiaUndoSolid
@@ -14,15 +13,7 @@ const ToolSelector = () => {
 
 	return (
 		<div className={styles.toolSelector}>
-			<Button
-				onClick={() => dispatch({ type: 'SET_MODE', payload: 'brush' })}
-				disabled={state.selectedClass ? false : true}
-				selected={state.mode === 'brush' ? true : false}
-				size="small"
-				shape="circle"
-			>
-				<LiaPaintBrushSolid />
-			</Button>
+			<Menu />
 			<Button
 				onClick={() => dispatch({ type: 'SET_MODE', payload: 'anchorPen' })}
 				disabled={state.selectedClass ? false : true}

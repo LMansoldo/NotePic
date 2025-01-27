@@ -1,0 +1,11 @@
+.menu {
+	position: fixed;
+}
+
+.menuContent {
+	display: flex;
+	flex-direction: column;
+	row-gap: 5px;
+	position: absolute;
+	height: 30vh;
+}

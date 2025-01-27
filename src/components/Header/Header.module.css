@@ -7,4 +7,5 @@
 	top: 15px;
 	width: 95%;
 	justify-self: anchor-center;
+	z-index: 999;
 }
