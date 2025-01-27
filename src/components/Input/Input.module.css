@@ -1,0 +1,39 @@
+.inputContainer {
+	margin-bottom: 1rem;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+}
+
+.label {
+	display: block;
+	position: absolute;
+	bottom: 5px;
+	font-size: 14px;
+	color: var(--color-neutral-600);
+	transition: all 0.3s ease;
+}
+
+.inputField:focus + .label,
+.inputField:not(:placeholder-shown) + .label {
+	bottom: 30px;
+	font-size: 8px;
+	color: var(--color-primary);
+}
+
+.inputField {
+	padding: 5px 10px;
+	border: 1px solid transparent;
+	width: 100%;
+	border-bottom: 2px solid var(--color-neutral-300);
+	outline: none;
+	height: 20px;
+	background-color: transparent;
+}
+
+.errorText {
+	color: red;
+	font-size: 12px;
+	position: absolute;
+	top: -10px;
+}
