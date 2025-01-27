@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Konva from 'konva';
 import { Stage } from 'react-konva';
+import styles from './Canvas.module.css'
 
 interface CanvasProps {
   children: React.ReactNode;
@@ -9,6 +10,9 @@ interface CanvasProps {
   onMouseDown?: (e: Konva.KonvaEventObject<MouseEvent>) => void;
   onMouseMove?: (e: Konva.KonvaEventObject<MouseEvent>) => void;
   onMouseUp?: () => void;
+  onTouchStart?: (e: Konva.KonvaEventObject<TouchEvent>) => void;
+  onTouchMove?: (e: Konva.KonvaEventObject<TouchEvent>) => void;
+  onTouchEnd?: (e: Konva.KonvaEventObject<TouchEvent>) => void;
 }
 
 const Canvas: React.FC<CanvasProps> = ({ children, ...props }) => {
@@ -21,7 +25,7 @@ const Canvas: React.FC<CanvasProps> = ({ children, ...props }) => {
   useEffect(() => {
     const handleResize = () => {
       const newWidth = window.innerWidth < 1024 ? window.innerWidth : 1024;
-      const newHeight = window.innerWidth < 1024 ? window.innerHeight - 250 : 768;
+      const newHeight = window.innerHeight < 768 ? window.innerHeight - 150 : 768;
       setDimensions({
         width: newWidth,
         height: newHeight,
@@ -38,8 +42,9 @@ const Canvas: React.FC<CanvasProps> = ({ children, ...props }) => {
     <div style={{ overflow: 'hidden' }}>
       <Stage
 				width={dimensions.width}
-				height={dimensions.height}
+				height={dimensions.height - 100}
         ref={stageRef}
+        className={styles.canvasContainer}
         {...props}
       >
         {children}

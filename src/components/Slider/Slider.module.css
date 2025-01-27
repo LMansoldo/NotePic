@@ -1,21 +1,53 @@
 .sliderContainer {
 	display: flex;
 	align-items: center;
-	width: 95%;
+	width: 98%;
 	flex-direction: row;
 	justify-content: space-between;
 	position: fixed;
-	bottom: 15px;
+	bottom: 35px;
 	left: 0;
 	justify-self: anchor-center;
+	flex-shrink: 2;
+	z-index: 999;
 }
 
 .sliderItems {
 	display: flex;
-	transition: transform 0.5s ease;
+	position: absolute;
+	width: calc(100% - 60px);
+	z-index: 10;
+	column-gap: 15px;
+	justify-content: center;
+	justify-self: anchor-center;
 }
 
 .sliderItem {
-	flex: 1;
-	margin: 0 10px;
+	display: block;
+}
+
+@keyframes slideNext {
+	from {
+		transform: translateX(30%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slidePrev {
+	from {
+		transform: translateX(-30%);
+	}
+	to {
+		transform: translateX(0);
+	}
+}
+
+.next {
+	animation: slideNext 0.5s ease;
+}
+
+.prev {
+	animation: slidePrev 0.5s ease;
 }

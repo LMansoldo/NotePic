@@ -1,5 +1,4 @@
 import { useAnnotations } from '@context'
-import { ToolSelector } from './ToolSelector'
 import { AnchorPen, Brush, Eraser } from '@components/Annotation/Tool'
 import { ClassList, Card, Header } from '@components'
 

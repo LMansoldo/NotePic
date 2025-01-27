@@ -1,0 +1,5 @@
+.canvasContainer {
+	overflow: hidden;
+	touch-action: none;
+	width: 100%;
+}

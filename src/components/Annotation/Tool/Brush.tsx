@@ -54,6 +54,9 @@ const Brush = () => {
 			onMouseUp={handleMouseUp}
 			onMouseDown={handleMouseDown}
 			onMouseMove={handleMouseMove}
+			onTouchStart={handleMouseDown}
+      onTouchMove={handleMouseMove}
+      onTouchEnd={handleMouseUp}
 		>
 			<LayerManager>
 				<LineDraw

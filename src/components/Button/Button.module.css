@@ -10,20 +10,24 @@
 	border: 1px solid var(--color-neutral-300);
 	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 	color: var(--color-neutral-800);
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	max-width: 90px;
 }
 
 .flat {
 	border-radius: 0;
 	position: relative;
+}
 
-	&:before {
-		content: '';
-		position: absolute;
-		left: 0;
-		height: 100%;
-		width: 5px;
-		background-color: var(--button-accent-color, var(--color-primary));
-	}
+.flat:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	height: 100%;
+	width: 5px;
+	background-color: var(--button-accent-color, var(--color-primary));
 }
 
 .circle {
@@ -57,4 +61,10 @@
 .button:disabled {
 	cursor: not-allowed;
 	opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+	.button {
+		max-width: none;
+	}
 }
