@@ -8,21 +8,32 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	size?: ButtonSize
 	shape?: ButtonShape
 	children: React.ReactNode
+	accentColor?: string; 
 }
 
 const Button: React.FC<ButtonProps> = ({
 	size = 'medium',
 	shape = 'flat',
+	accentColor,
 	children,
 	className,
+	style,
 	...props
 }) => {
-	const buttonClasses = `${styles.button} ${styles[size]} ${styles[shape]} ${className || ''}`
-	return (
-		<button className={buttonClasses} {...props}>
-			{children}
-		</button>
-	)
+  const buttonClasses = `${styles.button} ${styles[size]} ${styles[shape]} ${className || ''}`;
+
+  return (
+    <button
+      className={buttonClasses}
+      style={{
+        '--button-accent-color': accentColor,
+        ...style,
+      } as React.CSSProperties}
+      {...props}
+    >
+      {children}
+    </button>
+  );
 }
 
 export { Button }

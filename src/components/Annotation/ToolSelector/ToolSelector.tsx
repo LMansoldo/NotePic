@@ -1,8 +1,8 @@
 import { Button } from '@components'
 import {
 	LiaPaintBrushSolid,
-	LiaPenSolid,
 	LiaEraserSolid,
+	LiaPenFancySolid
 } from 'react-icons/lia'
 import { useAnnotations } from '@context'
 import styles from './ToolSelector.module.css'
@@ -23,7 +23,7 @@ const ToolSelector = () => {
 				size="small"
 				shape="circle"
 			>
-				<LiaPenSolid />
+				<LiaPenFancySolid />
 			</Button>
 			<Button
 				onClick={() => dispatch({ type: 'SET_MODE', payload: 'eraser' })}
@@ -32,6 +32,7 @@ const ToolSelector = () => {
 			>
 				<LiaEraserSolid />
 			</Button>
+
 		</div>
 	)
 }

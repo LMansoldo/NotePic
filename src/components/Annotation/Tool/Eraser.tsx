@@ -1,8 +1,7 @@
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import Konva from 'konva';
 import { Canvas } from '@components';
 import LayerManager from '../LayerManager/LayerManager';
-import LineDraw from '../LineDraw/LineDraw';
 
 import { useAnnotations } from '@context';
 
@@ -29,7 +28,7 @@ const Eraser = () => {
 		}
 		return false;
 	};
-	
+
   const handleMouseDown = (e: Konva.KonvaEventObject<MouseEvent>) => {
     isErasing.current = true;
 

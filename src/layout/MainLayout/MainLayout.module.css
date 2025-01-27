@@ -1,0 +1,17 @@
+.mainLayout {
+	padding: 0;
+	transition: padding 0.3s ease;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+@media (min-width: 768px) {
+	.mainLayout {
+		padding: 1rem;
+		transition: padding 0.3s ease;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+}

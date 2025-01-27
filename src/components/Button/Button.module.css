@@ -18,10 +18,11 @@
 
 	&:before {
 		content: '';
-		border-left: 5px solid var(--color-primary);
-		height: 100%;
 		position: absolute;
 		left: 0;
+		height: 100%;
+		width: 5px;
+		background-color: var(--button-accent-color, var(--color-primary));
 	}
 }
 
