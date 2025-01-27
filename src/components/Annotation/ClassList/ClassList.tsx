@@ -1,7 +1,7 @@
 import { Button } from "@components";
 import { useAnnotations } from "@context";
 import { Slider } from "../../Slider/Slider";
-import { ClassSelector } from "@components";
+import styles from './ClassList.module.css';
 
 const ClassList = () => {
   const { state } = useAnnotations();
@@ -11,15 +11,23 @@ const ClassList = () => {
   }
 
   return (
-		<>
-	
-						<Slider items={state.classes.map((classItem) => (
-      <Button key={classItem.color} shape="flat" size="small" accentColor={classItem.color}>
-        {classItem.name}
-      </Button>
-    ))} />
-		</>
-
+    <>
+      <div className={styles.classList}>
+        {state.classes.map((classItem) => (
+          <Button key={classItem.color} shape="flat" size="small" accentColor={classItem.color}>
+            {classItem.name}
+          </Button>
+        ))}
+      </div>
+      
+      <div className={styles.sliderContainer}>
+        <Slider items={state.classes.map((classItem) => (
+          <Button key={classItem.color} shape="flat" size="small" accentColor={classItem.color}>
+            {classItem.name}
+          </Button>
+        ))} />
+      </div>
+    </>
   );
 };
 

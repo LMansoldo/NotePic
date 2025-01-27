@@ -1,0 +1,23 @@
+.classList {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: 10px;
+	position: absolute;
+	right: 20px;
+	top: 100px;
+}
+
+.sliderContainer {
+	display: none;
+}
+
+@media (max-width: 768px) {
+	.classList {
+		display: none;
+	}
+
+	.sliderContainer {
+		display: block;
+	}
+}
