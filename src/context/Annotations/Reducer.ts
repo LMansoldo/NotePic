@@ -1,5 +1,5 @@
 import type { AnnotationAction } from '@context'
-import type { AnnotationsState, Shape } from '@types'
+import type { AnnotationsState, Shape, Class } from '@types'
 
 const AnnotationsReducer = (
 	state: AnnotationsState,
@@ -18,7 +18,7 @@ const AnnotationsReducer = (
 				classes: [...state.classes, action.payload],
 			}
 		case 'SELECT_CLASS':
-			return { ...state, selectedClass: action.payload as unknown as Shape }
+			return { ...state, selectedClass: action.payload as Class }
 		case 'ADD_SHAPE':
 			return { ...state, shapes: [...state.shapes, action.payload] as Shape[] }
 		case 'UPDATE_SHAPES':

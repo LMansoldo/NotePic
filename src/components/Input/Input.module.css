@@ -3,6 +3,7 @@
 	position: relative;
 	display: flex;
 	flex-direction: row;
+	width: 100px;
 }
 
 .label {

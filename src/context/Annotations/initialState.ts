@@ -1,8 +1,8 @@
 const initialState = {
-	mode: 'brush',
+	mode: 'anchorPen',
 	brushSize: 5,
-	classes: [],
-	selectedClass: null,
+	classes: [{ name: 'Object', color: '#532ee3'}],
+	selectedClass: { name: 'Object', color: '#532ee3'},
 	shapes: [],
 }
 

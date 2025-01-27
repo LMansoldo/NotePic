@@ -2,7 +2,7 @@ interface AnnotationsState {
 	mode?: string
 	brushSize?: number
 	classes: Class[]
-	selectedClass?: Shape | null
+	selectedClass?: Class | null
 	shapes: Shape[]
 }
 

@@ -16,7 +16,7 @@ const Slider: React.FC<SliderProps> = ({ items }) => {
     if (animating) {
       const timer = setTimeout(() => {
         setAnimating(false);
-      }, 500); // Duration of the animation
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [animating]);

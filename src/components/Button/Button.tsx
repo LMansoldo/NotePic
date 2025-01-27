@@ -8,6 +8,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	size?: ButtonSize
 	shape?: ButtonShape
 	children: React.ReactNode
+  selected?: boolean
 	accentColor?: string; 
 }
 
@@ -17,10 +18,11 @@ const Button: React.FC<ButtonProps> = ({
 	accentColor,
 	children,
 	className,
+  selected,
 	style,
 	...props
 }) => {
-  const buttonClasses = `${styles.button} ${styles[size]} ${styles[shape]} ${className || ''}`;
+  const buttonClasses = `${styles.button} ${styles[size]} ${styles[shape]} ${selected && styles.selected} ${className || ''}`;
 
   return (
     <button
