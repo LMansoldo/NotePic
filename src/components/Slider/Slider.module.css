@@ -1,0 +1,21 @@
+.sliderContainer {
+	display: flex;
+	align-items: center;
+	width: 95%;
+	flex-direction: row;
+	justify-content: space-between;
+	position: fixed;
+	bottom: 15px;
+	left: 0;
+	justify-self: anchor-center;
+}
+
+.sliderItems {
+	display: flex;
+	transition: transform 0.5s ease;
+}
+
+.sliderItem {
+	flex: 1;
+	margin: 0 10px;
+}
