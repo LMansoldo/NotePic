@@ -39,7 +39,7 @@ const Canvas: React.FC<CanvasProps> = ({ children, ...props }) => {
   }, []);
 
   return (
-    <div style={{ overflow: 'hidden' }}>
+    <div style={{ overflow: 'hidden', cursor: 'crosshair' }}>
       <Stage
 				width={dimensions.width}
 				height={dimensions.height - 100}

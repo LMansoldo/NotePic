@@ -43,7 +43,7 @@ const AnchorPen = () => {
         Math.pow(endPoint.x - startPoint.x, 2) + Math.pow(endPoint.y - startPoint.y, 2)
       );
 
-      const closeThreshold = 20;
+      const closeThreshold = 30;
 
       if (distance <= closeThreshold) {
         const newShape = {
@@ -69,24 +69,24 @@ const AnchorPen = () => {
   };
 
   return (
-    <Canvas onClick={handleStageClick}>
-      <LayerManager>
-        <LineDraw
-          points={currentPoints.flatMap((point) => [point.x, point.y])}
-          color={state.selectedClass?.color || '#532ee3'}
-          strokeWidth={state.brushSize || 2}
-        />
-        <Anchors points={currentPoints} onAnchorDrag={handleAnchorDrag} />
-        {state.shapes.map((shape, index) => (
+      <Canvas onClick={handleStageClick}>
+        <LayerManager>
           <LineDraw
-            key={index}
-            points={shape.points}
-            color={shape.color}
-            strokeWidth={shape.strokeWidth}
+            points={currentPoints.flatMap((point) => [point.x, point.y])}
+            color={state.selectedClass?.color || '#532ee3'}
+            strokeWidth={10}
           />
-        ))}
-      </LayerManager>
-    </Canvas>
+          <Anchors points={currentPoints} onAnchorDrag={handleAnchorDrag} />
+          {state.shapes.map((shape, index) => (
+            <LineDraw
+              key={index}
+              points={shape.points}
+              color={shape.color}
+              strokeWidth={6}
+            />
+          ))}
+        </LayerManager>
+      </Canvas>
   );
 };
 

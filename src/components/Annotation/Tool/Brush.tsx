@@ -9,7 +9,7 @@ const Brush = () => {
   const { state, dispatch } = useAnnotations();
   const isDrawing = useRef<boolean>(false);
   const [points, setPoints] = useState<number[]>([]);
-  const closeThreshold = 10;
+  const closeThreshold = 15;
 
   const handleMouseDown = (e: Konva.KonvaEventObject<MouseEvent>) => {
     isDrawing.current = true;
@@ -58,6 +58,7 @@ const Brush = () => {
     if (pointerPosition) {
       const intersection = stage?.getIntersection(pointerPosition);
       if (intersection) {
+				setPoints([])
         return;
       }
 
@@ -75,6 +76,8 @@ const Brush = () => {
       const distance = Math.sqrt(
         Math.pow(endPoint.x - startPoint.x, 2) + Math.pow(endPoint.y - startPoint.y, 2)
       );
+
+			
 
       if (distance <= closeThreshold) {
         const newShape = {
@@ -112,7 +115,7 @@ const Brush = () => {
           <LineDraw
             key={index}
             points={shape.points}
-            color={shape.color}
+						color={state.selectedClass?.color || '#532ee3'}
             strokeWidth={shape.strokeWidth}
           />
         ))}
