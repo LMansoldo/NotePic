@@ -19,8 +19,10 @@ const Anchors: React.FC<AnchorsProps> = ({ points, onAnchorDrag }) => {
 					key={index}
 					x={point.x}
 					y={point.y}
-					radius={3}
-					fill="#ff5722"
+					radius={4}
+					stroke="#000"
+					strokeWidth={1}
+					fill="#FFF"
 					draggable
 					onDragMove={(e) => onAnchorDrag(index, e.target.x(), e.target.y())}
 				/>

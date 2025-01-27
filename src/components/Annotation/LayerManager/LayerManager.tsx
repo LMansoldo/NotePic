@@ -18,11 +18,13 @@ const LayerManager: React.FC<LayerManagerProps> = ({ children, layerRef }) => {
 					key={index}
 					points={shape.points}
 					stroke={shape.color}
+					fill={shape.color}
+					opacity={0.5}
 					strokeWidth={shape.strokeWidth}
 					tension={0}
 					lineCap="round"
 					lineJoin="round"
-					closed={shape.type === 'anchorPen'}
+					closed={true}
 				/>
 			))}
 			{children}

@@ -4,7 +4,7 @@ import { Slider } from "../../Slider/Slider";
 import styles from './ClassList.module.css';
 
 const ClassList = () => {
-  const { state } = useAnnotations();
+  const { state, dispatch } = useAnnotations();
 
   if (!state?.classes) {
     return null;
@@ -14,7 +14,7 @@ const ClassList = () => {
     <>
       <div className={styles.classList}>
         {state.classes.map((classItem) => (
-          <Button key={classItem.color} shape="flat" size="small" accentColor={classItem.color}>
+          <Button key={classItem.color} shape="flat" size="small" accentColor={classItem.color} selected={state.selectedClass?.color === classItem.color ? true : false} onClick={() => dispatch({ type: 'SELECT_CLASS', payload: classItem })}>
             {classItem.name}
           </Button>
         ))}
@@ -22,7 +22,7 @@ const ClassList = () => {
       
       <div className={styles.sliderContainer}>
         <Slider items={state.classes.map((classItem) => (
-          <Button key={classItem.color} shape="flat" size="small" accentColor={classItem.color}>
+          <Button key={classItem.color} shape="flat" size="small" accentColor={classItem.color} selected={state.selectedClass?.color === classItem.color ? true : false} onClick={() => dispatch({ type: 'SELECT_CLASS', payload: classItem })}>
             {classItem.name}
           </Button>
         ))} />
