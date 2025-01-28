@@ -4,6 +4,7 @@ interface AnnotationsState {
 	classes: Class[]
 	selectedClass?: Class | null
 	shapes: Shape[]
+	imageSrc?: ImageSrc
 }
 
 type ShapeType = 'brush' | 'anchorPen' | 'eraser'
@@ -25,4 +26,11 @@ interface Point {
 	y: number
 }
 
-export type { AnnotationsState, ShapeType, Shape, Class, Point }
+interface ImageSrc {
+	url: string,
+	file_name: string,
+	width: number,
+	height: number,
+}
+
+export type { AnnotationsState, ShapeType, Shape, Class, Point, ImageSrc }

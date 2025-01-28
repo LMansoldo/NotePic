@@ -6,7 +6,7 @@ const Annotation = () => {
 	const { state } = useAnnotations()
 
 	return (
-		<Card>
+		<Card imgSrc={`${state.imageSrc?.url}${state.imageSrc?.file_name}`}>
 			<Header />
 			{state && state.mode === 'anchorPen' && <AnchorPen />}
 			{state && state.mode === 'brush' && <Brush />}

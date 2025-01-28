@@ -24,9 +24,9 @@ const Export = () => {
       images: [
         {
           id: 1,
-          file_name: "image1.jpg",
-          width: 640,
-          height: 480,
+          file_name: state.imageSrc?.file_name,
+          width: state.imageSrc?.width,
+          height: state.imageSrc?.height,
           date_captured: "2025-01-27",
           license: 1,
           coco_url: "",
@@ -67,7 +67,6 @@ const Export = () => {
     a.click();
   };
   
-
   return <Button shape="circle" size="small" onClick={exportToCOCO}><LiaFileExportSolid /></Button>;
 };
 
