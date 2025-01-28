@@ -27,10 +27,10 @@ interface Point {
 }
 
 interface ImageSrc {
-	url: string,
-	file_name: string,
-	width: number,
-	height: number,
+	url: string
+	file_name: string
+	width: number
+	height: number
 }
 
 export type { AnnotationsState, ShapeType, Shape, Class, Point, ImageSrc }

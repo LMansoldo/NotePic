@@ -11,7 +11,7 @@ const Card = ({ children, className = '', imgSrc }: CardProps) => {
 	const cardStyle = {
 		backgroundImage: imgSrc ? `url(${imgSrc})` : 'none',
 		backgroundRepeat: 'no-repeat',
-		backgroundPosition: 'center center'
+		backgroundPosition: 'center center',
 	}
 
 	return (

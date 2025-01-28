@@ -1,9 +1,5 @@
 import { Button, Menu } from '@components'
-import {
-	LiaEraserSolid,
-	LiaPenFancySolid,
-	LiaUndoSolid
-} from 'react-icons/lia'
+import { LiaEraserSolid, LiaPenFancySolid, LiaUndoSolid } from 'react-icons/lia'
 import { useAnnotations } from '@context'
 import Export from '@components/Annotation/Tool/Export'
 import styles from './ToolSelector.module.css'

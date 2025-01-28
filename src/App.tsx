@@ -6,9 +6,7 @@ function App() {
 	return (
 		<AnnotationsProvider>
 			<MainLayout>
-			
-					<Annotation />
-	
+				<Annotation />
 			</MainLayout>
 		</AnnotationsProvider>
 	)
