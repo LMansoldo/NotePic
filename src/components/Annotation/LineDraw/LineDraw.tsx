@@ -16,7 +16,7 @@ const LineDraw: React.FC<LineDrawProps> = ({ points, color, strokeWidth }) => {
 			tension={0}
 			lineCap="round"
 			lineJoin="round"
-			opacity={0.3}
+			opacity={0.7}
 		/>
 	)
 }
