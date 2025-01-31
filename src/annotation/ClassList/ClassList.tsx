@@ -1,6 +1,5 @@
-import { Button } from '@components'
+import { Button, Slider } from '@components'
 import { useAnnotations } from '@context'
-import { Slider } from '../../Slider/Slider'
 import styles from './ClassList.module.css'
 
 const ClassList = () => {

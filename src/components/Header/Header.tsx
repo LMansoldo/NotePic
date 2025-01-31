@@ -1,4 +1,4 @@
-import { ToolSelector } from '@components/Annotation/ToolSelector'
+import { ToolSelector } from '../../annotation/ToolSelector'
 import { ClassSelector } from '@components'
 import styles from './Header.module.css'
 

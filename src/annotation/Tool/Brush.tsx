@@ -1,15 +1,13 @@
 import { useState, useRef } from 'react'
 import Konva from 'konva'
 import { Canvas } from '@components'
-import LayerManager from '../LayerManager/LayerManager'
-import LineDraw from '../LineDraw/LineDraw'
 import { useAnnotations } from '@context'
 
 const Brush = () => {
-	const { state, dispatch } = useAnnotations()
-	const isDrawing = useRef<boolean>(false)
-	const [points, setPoints] = useState<number[]>([])
-	const closeThreshold = 10
+  const { state, dispatch } = useAnnotations()
+  const isDrawing = useRef<boolean>(false)
+  const [points, setPoints] = useState<number[]>([])
+  const closeThreshold = 10
 
 	const handleMouseDown = (e: Konva.KonvaEventObject<MouseEvent>) => {
 		isDrawing.current = true
@@ -97,31 +95,33 @@ const Brush = () => {
 	}
 
 	return (
-		<Canvas
-			onMouseUp={handleMouseUp}
-			onMouseDown={handleMouseDown}
-			onMouseMove={handleMouseMove}
-			onTouchStart={handleTouchStart}
-			onTouchMove={handleTouchMove}
-			onTouchEnd={handleMouseUp}
-		>
-			<LayerManager>
-				<LineDraw
-					points={points}
-					color={state.selectedClass?.color || '#532ee3'}
-					strokeWidth={state.brushSize || 2}
-				/>
-				{state.shapes.map((shape, index) => (
-					<LineDraw
-						key={index}
-						points={shape.points}
-						color={shape.color}
-						strokeWidth={shape.strokeWidth}
-					/>
-				))}
-			</LayerManager>
-		</Canvas>
-	)
+    <Canvas
+      onMouseUp={handleMouseUp}
+      onMouseDown={handleMouseDown}
+      onMouseMove={handleMouseMove}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleMouseUp}
+    >
+      <Canvas.Layer>
+        <Canvas.Line
+          points={points}
+          color={state.selectedClass?.color || '#532ee3'}
+          strokeWidth={state.brushSize || 2}
+        />
+        {state.shapes.map((shape, index) => (
+          <Canvas.Line
+            key={index}
+            points={shape.points}
+            color={shape.color}
+            strokeWidth={shape.strokeWidth}
+            opacity={0.5}
+            closed={true}
+          />
+        ))}
+      </Canvas.Layer>
+    </Canvas>
+  )
 }
 
 export { Brush }

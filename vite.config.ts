@@ -18,6 +18,8 @@ export default defineConfig({
 		alias: {
 			'@layout': path.resolve(__dirname, './src/layout'),
 			'@layout/*': path.resolve(__dirname, './src/layout/*'),
+			'@annotation': path.resolve(__dirname, './src/annotation'),
+			'@annotation/*': path.resolve(__dirname, './src/annotation/*'),
 			'@components': path.resolve(__dirname, './src/components'),
 			'@components/*': path.resolve(__dirname, './src/components/*'),
 			'@types': path.resolve(__dirname, './src/types'),

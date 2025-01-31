@@ -1,6 +1,6 @@
 import { MainLayout } from '@layout/MainLayout'
 import { AnnotationsProvider } from '@context/Annotations'
-import { Annotation } from '@components'
+import { Annotation } from './annotation'
 
 function App() {
 	return (
