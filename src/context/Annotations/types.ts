@@ -9,3 +9,10 @@ export type AnnotationAction =
 	| { type: 'ADD_SHAPE'; payload: Shape }
 	| { type: 'UPDATE_SHAPES'; payload: Shape[] }
 	| { type: 'UNDO_SHAPE' }
+
+
+	export enum AnnotationModes {
+		ANCHOR_PEN = 'anchorPen',
+		BRUSH = 'brush',
+		ERASER = 'eraser'
+	}
