@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Konva from 'konva'
 import type { Point, CanvasComponent, CustomLayerProps, LineProps, AnchorProps } from '@types'
-import { Stage, Line, Circle as KonvaCircle, Layer as KonvaLayer } from 'react-konva'
+import { Stage, Line, Circle as KonvaCircle, Layer as KonvaLayer, Image as KonvaImage, Group } from 'react-konva'
 import styles from './Canvas.module.css'
 import { useAnnotations } from '@context'
+import useImage from 'use-image'
 
 const Canvas: CanvasComponent = ({ children, ...props }) => {
   const stageRef = useRef<Konva.Stage>(null)
@@ -27,6 +28,7 @@ const Canvas: CanvasComponent = ({ children, ...props }) => {
       window.removeEventListener('resize', handleResize)
     }
   }, [])
+
 
   return (
     <div style={{ overflow: 'hidden', cursor: 'crosshair' }}>
@@ -94,8 +96,9 @@ const Anchor: React.FC<AnchorProps> = ({ x, y, onDrag }) => {
     <KonvaCircle
       x={x}
       y={y}
-      radius={5}
-      fill="red"
+      radius={7}
+      fill="white"
+      stroke="black"
       draggable
       onDragEnd={(e) => {
         onDrag(e.target.x(), e.target.y())
@@ -103,6 +106,32 @@ const Anchor: React.FC<AnchorProps> = ({ x, y, onDrag }) => {
     />
   )
 }
+
+
+const ImageComponent: React.FC< {
+  src: string;
+  x?: number;
+  y?: number;
+  width?: number;
+  height?: number;
+  listening?: boolean;
+  preventDefault?: boolean;
+}> = ({ src, ...props }) => {
+  const [image] = useImage(src, 'anonymous')
+
+  useEffect(() => {
+    if (!image) {
+      return
+    }
+
+  }, [image])
+  return (
+    <Group>
+      <KonvaImage image={image} {...props} />
+    </Group>
+  );
+};
+
 
 const Anchors = ({ points, onDrag }: { 
   points: Point[] 
@@ -150,5 +179,6 @@ Canvas.Line = LineComponent
 Canvas.Anchors = Anchors
 Canvas.Circle = CircleComponent
 Canvas.Eraser = Eraser
+Canvas.Image = ImageComponent
 
 export { Canvas }

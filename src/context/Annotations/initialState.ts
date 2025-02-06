@@ -1,8 +1,8 @@
 const initialState = {
-	mode: 'anchorPen',
+	mode: '',
 	brushSize: 5,
-	classes: [{ name: 'Object', color: '#532ee3' }],
-	selectedClass: { name: 'Object', color: '#532ee3' },
+	classes: [],
+	selectedClass: undefined,
 	shapes: [],
 	imageSrc: {
 		url: 'src/assets/',
