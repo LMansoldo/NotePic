@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Button } from '@components'
-import styles from './Menu.module.css'
+import styles from './BrushMenu.module.css'
 import { LiaBrushSolid } from 'react-icons/lia'
 import { useAnnotations } from '@context'
 
-const Menu = () => {
+const BrushMenu = () => {
 	const { state, dispatch } = useAnnotations()
 	const [isActive, setIsActive] = useState(false)
 
@@ -78,4 +78,4 @@ const Menu = () => {
 	)
 }
 
-export { Menu }
+export { BrushMenu }

@@ -1,6 +1,7 @@
-import { Button, Menu } from '@components'
+import { Button } from '@components'
 import { LiaEraserSolid, LiaPenFancySolid, LiaUndoSolid } from 'react-icons/lia'
 import { useAnnotations } from '@context'
+import { BrushMenu } from '@annotation/BrushMenu'
 import Export from '../Tool/Export'
 import styles from './ToolSelector.module.css'
 
@@ -24,7 +25,7 @@ const ToolSelector = () => {
     eraser: {
       icon: <LiaEraserSolid />,
       action: () => dispatch({ type: 'SET_MODE', payload: 'eraser' }),
-      disabled: false,
+      disabled: !state.selectedClass,
       selected: state.mode === 'eraser'
     },
     undo: {
@@ -37,7 +38,7 @@ const ToolSelector = () => {
 
   return (
     <div className={styles.toolSelector}>
-      <Menu />
+      <BrushMenu />
       {Object.entries(toolsConfig).map(([key, config]) => (
         <Button
           key={key}

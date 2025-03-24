@@ -65,6 +65,16 @@ interface EraserProps {
   radius: number;
 }
 
+interface ImageProps {
+  src: string;
+  x?: number;
+  y?: number;
+  width?: number;
+  height?: number;
+	listening?: boolean;
+	imageSmoothingEnabled?: boolean;
+}
+
 interface CanvasProps {
 	children: React.ReactNode
 	onClick?: (e: Konva.KonvaEventObject<MouseEvent>) => void
@@ -85,6 +95,7 @@ type CanvasComponent = React.FC<CanvasProps> & {
   Anchors: React.FC<AnchorsProps>;
   Eraser: React.FC<EraserProps>;
   Circle: React.FC<Konva.CircleConfig>;
+	Image: React.FC<ImageProps>
 };
 
 

@@ -1,4 +1,5 @@
 export * from './Brush'
+export * from './Blank'
 export * from './AnchorPen'
 export * from './Eraser'
 export * from './Export'
